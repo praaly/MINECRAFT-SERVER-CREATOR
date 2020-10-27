@@ -5,6 +5,19 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <title>MINECRAFT SERVER CREATOR</title>
     <link rel="stylesheet" type="text/css" href="assets/css/application.css">	
+    <script src="assets/js/MSC.js"></script>
+    <!-- CHECK SERVER ONLINE/UPDATE -->
+    <script type="text/javascript">
+      function PopUpdater(hideOrshow) {
+          if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
+          else document.getElementById('ac-wrapper').removeAttribute('style');
+      }
+
+      if(checkServer){
+        console.log("is on!")
+      };     
+      </script>
+
   </head>
   <body>
     <div class="loader">
@@ -22,19 +35,22 @@
         </div>
       </div>	
     </div>
+
     <p id="version"></p>
+
     <!-- NOTIFICATION -->
-    <div id="notification" class="hidden">
-      <p id="message"></p>
-      <button id="close-button" onClick="closeNotification()">
-        Close
-      </button>
-      <button id="restart-button" onClick="restartApp()" class="hidden">
-        Restart
-      </button>
-    </div> 
-    
-    
+    <div id="ac-wrapper" style='display:none'>
+      <div id="popup">
+          <center>
+            <img src="../icons/logo_application.png" height="250px" width="250px" />
+            <p id="message"></p>
+              <input type="submit" name="submit" value="Submit" onClick="PopUp('hide')" />
+              <button id="close-button" onClick="closeNotification()">Close</button>
+              <button id="restart-button" onClick="restartApp()" class="hidden">Restart</button>
+          </center>
+      </div>
+  </div>
+
     <script src="../renderer.js"></script>
     <script>
       const { ipcRenderer } = require('electron');
@@ -52,11 +68,14 @@
       const notification = document.getElementById('notification');
       const message = document.getElementById('message');
       const restartButton = document.getElementById('restart-button');
+      
       ipcRenderer.on('update_available', () => {
         ipcRenderer.removeAllListeners('update_available');
         message.innerText = 'A new update is available. Downloading now...';
         notification.classList.remove('hidden');
+        PopUpdater('show');
       });
+
       ipcRenderer.on('update_downloaded', () => {
         ipcRenderer.removeAllListeners('update_downloaded');
         message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';

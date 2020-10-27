@@ -9,6 +9,6 @@ const customTitlebar = require('custom-electron-titlebar');
 new customTitlebar.Titlebar({
     backgroundColor: customTitlebar.Color.fromHex('#333'),
     menu: false,
-    icon: 'assets/images/icons/win_ico.png',
+    icon: '../icons/logo.png',
     titleHorizontalAlignment: "left",   
 });
