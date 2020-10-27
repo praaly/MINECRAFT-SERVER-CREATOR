@@ -1,6 +1,6 @@
 {
   "name": "msc-app",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "MSC application",
   "main": "main.js",
   "scripts": {
