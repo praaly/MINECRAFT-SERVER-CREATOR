@@ -19,6 +19,16 @@ body {
     font-size: 18px;
   }
   
+  button{
+    background-color: #555555; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
   .message {
     margin: 2em;
     padding: 15px;
@@ -76,6 +86,8 @@ body {
   animation: message 2s cubic-bezier(0.645,.045,.355,1) infinite;
 }
 
+
+/* UPDATER */
 #notification {
   width: 300px;
   height: 375px;
@@ -84,10 +96,23 @@ body {
   top: 20%;
   left: 38%;
 }
- .hidden {
-  display: none;
-} 
 
+/* UPDATER */
+.hidden {
+  display: none;
+}
+
+/* UPDATER */
+#message{
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  text-align: center;
+  display: flex;
+  margin-top: -10%;
+}
+
+/* UPDATER */
 #version{
   position: fixed;
   bottom: -15px;

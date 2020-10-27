@@ -7,6 +7,8 @@ function createWindow () {
     width: 1280,
     height: 800,
     frame:false,
+    title: "MSCREATOR",
+    icon: __dirname + '/icons/logo.ico',
     titleBarStyle: 'hidden',
     webPreferences: {
       nodeIntegration: true,
