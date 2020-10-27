@@ -1,25 +1,26 @@
 {
   "name": "electron-quick-start",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --mac --win --publish never",
-    "deploy": "electron-builder build --mac --win --publish always"
+    "build": "electron-builder build  --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "build": {
+    "win": {
+      "icon": "icons/logo.ico"
+    }
   },
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/https://github.com/praaly/MSC-SERV-APP.git"
+    "url" : "https://github.com/praaly/MSC-SERV-APP.git"
   },
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Electron"
   ],
-  "author": "GitHub",
+  "author": "Alexandre.L (Praaly)",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^10.1.5",
