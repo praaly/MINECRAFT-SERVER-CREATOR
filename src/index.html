@@ -3,34 +3,27 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <title>Hello World!</title>
-    <style>
-      body {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 20px;
-        font-family: sans-serif;
-        background-color: #eaeaea;
-        text-align: center;
-      }
-      #notification {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        width: 200px;
-        padding: 20px;
-        border-radius: 5px;
-        background-color: white;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      }
-      .hidden {
-        display: none;
-      }
-    </style>
+    <title>MINECRAFT SERVER CREATOR</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/application.css">	
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <h1 id="version"></h1>
+    <div class="loader">
+      <div class="logo">
+        <img src="../icons/logo_application.png" height="350px" width="350px" />
+      </div>
+      <div class="message">
+        <div class="message__text">MINECRAFT SERVER CREATOR</div>
+        <div class="message__author">Created by @Praaly</div>
+      </div>
+      <div class="status">
+        <div class="container">
+          <p class="status_p">Connecting to the server...</p>
+          <p class="status_p">o</p>
+        </div>
+      </div>	
+    </div>
+    <p id="version"></p>
+    <!-- NOTIFICATION -->
     <div id="notification" class="hidden">
       <p id="message"></p>
       <button id="close-button" onClick="closeNotification()">
@@ -40,8 +33,9 @@
         Restart
       </button>
     </div> 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    
+    
+    <script src="../renderer.js"></script>
     <script>
       const { ipcRenderer } = require('electron');
       const version = document.getElementById('version');

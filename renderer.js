@@ -4,3 +4,11 @@
 // `nodeIntegration` is turned off. Use `preload.js` to
 // selectively enable features needed in the rendering
 // process.
+const customTitlebar = require('custom-electron-titlebar');
+ 
+new customTitlebar.Titlebar({
+    backgroundColor: customTitlebar.Color.fromHex('#333'),
+    menu: false,
+    icon: 'assets/images/icons/win_ico.png',
+    titleHorizontalAlignment: "left",   
+});
