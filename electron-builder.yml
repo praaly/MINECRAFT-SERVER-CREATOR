@@ -1,0 +1,4 @@
+appId: com.example.MSCAPP
+publish:
+  provider: github
+  token: GH_TOKEN 
