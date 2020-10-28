@@ -66,7 +66,8 @@
       });
       ipcRenderer.on('update_downloaded', () => {
         ipcRenderer.removeAllListeners('update_downloaded');
-        message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';
+        message.innerText = 'Update Downloaded. It will be installed on restart. Restart now';
+        ipcRenderer.send('restart_app');
         restartButton.classList.remove('hidden');
         notification.classList.remove('hidden');
       });
