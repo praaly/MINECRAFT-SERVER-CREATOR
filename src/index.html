@@ -8,9 +8,11 @@
     <script src="assets/js/MSC.js"></script>
     <!-- CHECK SERVER ONLINE/UPDATE -->
     <script type="text/javascript">
-    if(checkServer){
-        console.log("is on!")
-      };
+    if(checkServer){     
+    setTimeout(function(){
+      window.location.href = 'application.html';
+      }, 5000);
+    };
     </script>
   </head>
   <body>
@@ -34,7 +36,7 @@
     <div id="notification" class="hidden">
       <center>
       <img src="../icons/logo_application.png" height="250px" width="250px" />
-      <p id="message">A new update is available. Downloading now...</p>
+      <p id="message"></p>
       <button id="close-button" onClick="closeNotification()">Close</button>
       <button id="restart-button" onClick="restartApp()" class="hidden">Restart</button>
     </center>
