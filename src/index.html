@@ -8,17 +8,21 @@
     <script src="assets/js/MSC.js"></script>
     <!-- CHECK SERVER ONLINE/UPDATE -->
     <script type="text/javascript">
-    if(checkServer){     
-    setTimeout(function(){
-      window.location.href = 'application.html';
-      }, 9000);
-    };
+
+    (async () => {
+      const reached = await CheckServer()
+      if(reached){
+        setTimeout(function(){window.location.href = 'application.html';}, 9000);
+      }else{
+        setTimeout(function(){window.location.href = 'index.html';}, 10000);
+      }
+    })()
     </script>
   </head>
   <body>
     <div class="loader">
       <div class="logo">
-        <img src="../icons/logo_application.png" height="350px" width="350px" />
+        <img src="../icons/logo_application.png" height="350px" width="350px">
       </div>
       <div class="message">
         <div class="message__text">MINECRAFT SERVER CREATOR</div>

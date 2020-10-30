@@ -11,4 +11,23 @@
 
     </body>
     <script type="text/javascript" src="../renderer.js"></script>
+    <script type="text/javascript">
+
+    const notifier = require('node-notifier');
+    const path = require('path');
+
+    notifier.notify(
+    {
+        title: 'MINECRAFT SERVER CREATOR',
+        message: 'You are successfully connected to the server;',
+        icon: '../icons/logo.png', // Absolute path (doesn't work on balloons)
+        sound: true, // Only Notification Center or Windows Toasters
+        wait: true // Wait with callback, until user action is taken against notification, does not apply to Windows Toasters as they always wait or notify-send as it does not support the wait option
+    },
+    function (err, response) {
+        // Response is response from notification
+    }
+    );
+    </script>
+    
 </html>

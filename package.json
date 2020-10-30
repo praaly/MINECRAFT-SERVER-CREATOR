@@ -31,6 +31,9 @@
   },
   "dependencies": {
     "custom-electron-titlebar": "^3.2.5",
-    "electron-updater": "^4.3.5"
+    "electron-updater": "^4.3.5",
+    "is-reachable": "^5.0.0",
+    "node-notifier": "^8.0.0",
+    "toastify-js": "^1.9.3"
   }
 }
